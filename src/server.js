@@ -14,9 +14,7 @@ const startServer = async () => {
 
 startServer();
 
-// Conditionally listen to the server in development mode
-if (process.env.NODE_ENV !== "production") {
-  app.listen(PORT, () => {
-    console.log(`App listening on port ${PORT}`);
-  });
-}
+
+
+// ✅ Export app for Vercel
+module.exports = app;
