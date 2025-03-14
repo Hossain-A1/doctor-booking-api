@@ -2,7 +2,7 @@ const doctorModel = require("../models/doctors.model");
 const userModel = require("../models/user.model");
 const { successResponse } = require("./responseController");
 const createError = require("http-errors");
-const getAllDoctors = async (req, res, next) => {
+const handleGetAllDoctors = async (req, res, next) => {
   try {
     const doctors = await doctorModel.find();
     if (!doctors || doctors.length === 1) {
@@ -38,6 +38,5 @@ const changeAvailablity = async (req, res, next) => {
 };
 
 module.exports = {
-  getAllDoctors,
-  changeAvailablity,
+handleGetAllDoctors,  changeAvailablity,
 };
